@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- 创建时间: Create in 2021-12-18 12:25:40
+   
+   
+                      /^——^\     /^——^\     /^——^\
+                      \____/     \____/     \____/
+                     /      \   /      \   /      \
+                    |        | |        | |        |
+                     \__  __/   \__  __/   \__  __/
+|^|^|^|^|^|^|^|^|^|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|^|^|^|^|^|^|^|^|^|
+| | | | | | | | | | | |^|\ \| | |/ /| | | | | |\ \| | | | | | | | | | | |
+#########################/ /#####\ \###########/ /#######################
+| | | | | | | | | | | | |\/| | | |\/| | | | | |\/ | | | | | | | | | | | |
+|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
+-->
+<html>
+<!-- 
+                      /^——^\     /^——^\     /^——^\
+                      \____/     \____/     \____/
+                     /      \   /      \   /      \
+                    |        | |        | |        |
+                     \__  __/   \__  __/   \__  __/
+|^|^|^|^|^|^|^|^|^|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|^|^|^|^|^|^|^|^|^|
+| | | | | | | | | | | |^|\ \| | |/ /| | | | | |\ \| | | | | | | | | | | |
+#########################/ /#####\ \###########/ /#######################
+| | | | | | | | | | | | |\/| | | |\/| | | | | |\/ | | | | | | | | | | | |
+|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
+-->
+   
+<head>
+  <!--我只希望平淡的日子里有风，风吹来的是花的香味。-->
+  <!--引入本地css-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--utf-8防乱码-->
+  <meta charset="utf-8">
+  <!--标题-->
+  <title> 个人介绍 | 关于 </title>
+<head>
+<!-- 
+                      /^——^\     /^——^\     /^——^\
+                      \____/     \____/     \____/
+                     /      \   /      \   /      \
+                    |        | |        | |        |
+                     \__  __/   \__  __/   \__  __/
+|^|^|^|^|^|^|^|^|^|^|^|^\ \^|^|^|^/ /^|^|^|^|^\ \^|^|^|^|^|^|^|^|^|^|^|^|
+| | | | | | | | | | | |^|\ \| | |/ /| | | | | |\ \| | | | | | | | | | | |
+#########################/ /#####\ \###########/ /#######################
+| | | | | | | | | | | | |\/| | | |\/| | | | | |\/ | | | | | | | | | | | |
+|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|_|
+-->
+<style>/*css基本样式*/
+  body{
+    margin: 0;
+  }
+  .main{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #f9f9f9;
+  }
+  .main > .avatar > img{
+    width: 175px;
+    transition: 
+    width .5s,
+    border-radius .3s;
+    border-radius: 50%;
+  }
+  .main > .name > h2{
+    margin-block: .3em;
+  }  
+  .main > .txt {
+    font-size: xx-small;
+    color: #7f7f7f;
+    text-align: center;
+    letter-spacing: .1em;
+    margin-block-end: 1em;
+    animation: in .7s;
+  }
+  .txt::before{
+    content: '“';  
+    font-family: fantasy;
+  }
+  .txt::after{
+    content: '”';
+    font-family: fantasy;
+  }
+
+  @media screen and (max-width:1000px) {
+    .avatar > img{
+      width: 150px !important;
+    }
+  }
+  @media screen and (max-width:260px) {
+    .avatar > img{
+      border-radius: 0 !important;
+    }
+  }
+  @keyframes in {
+    0%{
+      transform: translateY(50%);
+      filter: blur(5px);
+    }
+  }
+</style>
+<body>
+<Alice them="白">
+    <main class="main">
+       <div class="avatar">
+        <img src="https://z1.ax1x.com/2023/04/13/ppx5zAU.jpg" alt="">
+       </div>
+       <div class="name">
+          <h2>不知名·周</h2>
+       </div>
+       <hr>
+       <div class="txt">
+          支离破碎的梦，<br>绘织平淡生活的刺.
+       </div>
+    </main>
+</Alice>
+<script>
+fetch("data.json")
+  .then((response) => response.json())
+  .then((data) => {
+    document.querySelector('.txt').innerHTML = data.text[0][Math.ceil(Math.random()*10)]
+})
+
+</script>
+</body>
+</html>
